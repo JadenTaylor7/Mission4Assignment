@@ -15,7 +15,7 @@ char[,] board = {
 
 // These are variables to keep track of the game
 char testWin = 'C';
-int turns = 0;
+int turns = 1;
 char currentPlayer = 'X';
 List<int> usedSpots = new List<int>();
 
@@ -23,7 +23,6 @@ List<int> usedSpots = new List<int>();
 while (testWin == 'C' && turns <= 9)
 {
     Console.Clear();
-    Console.WriteLine("");
     bd.PrintBoard(board);
     // Ask the current player for their choice
     Console.WriteLine($"Player {currentPlayer}, choose a position: ");
@@ -62,19 +61,26 @@ while (testWin == 'C' && turns <= 9)
     } else
     {
         Console.WriteLine("Invalid position! Try again.");
+        Thread.Sleep(2000);
     }
 }
 
 // Decide who to tell the user who won or if it was a draw
 if (testWin == 'X')
 {
+    Console.Clear();
+    bd.PrintBoard(board);
     Console.WriteLine("Player X won!");
 }
 else if (testWin == 'O')
 {
+    Console.Clear();
+    bd.PrintBoard(board);
     Console.WriteLine("Player O won!");
 } else if (testWin == 'C' && turns >= 9)
 {
+    Console.Clear();
+    bd.PrintBoard(board);
     Console.WriteLine("Its a draw!");
 }
     
