@@ -59,3 +59,16 @@ while (testWin == 'C' && turns <= 9)
     }
 }
 
+if (testWin == 'X')
+{
+    Console.WriteLine("Player X won!");
+}
+else if (testWin == 'O')
+{
+    Console.WriteLine("Player O won!");
+} else if (testWin == 'C' && turns >= 9)
+{
+    Console.WriteLine("Its a draw!");
+}
+    
+
