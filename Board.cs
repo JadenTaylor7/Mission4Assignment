@@ -13,7 +13,7 @@ namespace Mission4Assignment
         public Board() { }
 
 
-        static void PrintBoard(char[,] board)
+        public static void PrintBoard(char[,] board)
         {
             for (int i = 0; i < 3; i++)
             {
