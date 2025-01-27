@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mission4Assignment
+﻿namespace Mission4Assignment
 {
 
     internal class Board
@@ -14,7 +8,7 @@ namespace Mission4Assignment
 
 
         //Builds and prints out the tic tac toe board
-        public static void PrintBoard(char[,] board)
+        public void PrintBoard(char[,] board)
         {
             for (int i = 0; i < 3; i++)
             {
