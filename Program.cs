@@ -1,4 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+
+using Mission4Assignment;
+
+Board bd = new Board();
+
 Console.WriteLine("Welcome to Tic-Tac-Toe!");
 //  the game board (3x3 grid)
 char[,] board = {
@@ -16,7 +21,7 @@ List<int> usedSpots = new List<int>();
 // Main game loop (I did not finish this all the way)
 while (!gameWon && turns < 9)
 {
-    PrintBoard(board);
+    bd.PrintBoard(board);
     // Ask the current player for their choice
     Console.WriteLine($"Player {currentPlayer}, choose a position: ");
     string input = Console.ReadLine();
