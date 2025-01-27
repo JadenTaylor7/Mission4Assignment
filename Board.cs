@@ -13,13 +13,23 @@ namespace Mission4Assignment
         public Board() { }
 
 
-        public void PrintBoard(string[,] someBoard)
+        static void PrintBoard(char[,] board)
         {
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(board[i, j]);
+                    if (j < 2) Console.Write(" | ");
+                }
 
+                Console.WriteLine();
+                if (i < 2) Console.WriteLine("---------");
+            }
         }
 
 
-        public string ReturnResult(string[,] someBoard)
+        public string ReturnResult(char[,] someBoard)
         {
             string winnerResult = "";
 
