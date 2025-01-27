@@ -51,7 +51,7 @@ while (testWin == 'C' && turns <= 9)
         }
         
         
-        testWin = bd.PrintBoard(board);
+        testWin = bd.ReturnResult(board);
         
     } else
     {
