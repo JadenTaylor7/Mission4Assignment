@@ -19,7 +19,17 @@ namespace Mission4Assignment
         }
 
 
+        public string ReturnResult(string[,] someBoard)
+        {
+            string winnerResult = "";
 
+            //some code here
+
+
+            // Can return either "player 1, player 2, or ''."
+            return winnerResult;
+           
+        }
 
     }
 }
