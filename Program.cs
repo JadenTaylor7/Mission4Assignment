@@ -21,7 +21,7 @@ List<int> usedSpots = new List<int>();
 // Main game loop (I did not finish this all the way)
 while (!gameWon && turns < 9)
 {
-    bd.PrintBoard(board);
+    Board.PrintBoard(board);
     // Ask the current player for their choice
     Console.WriteLine($"Player {currentPlayer}, choose a position: ");
     string input = Console.ReadLine();
