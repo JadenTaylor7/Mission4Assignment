@@ -29,17 +29,49 @@ namespace Mission4Assignment
         }
 
 
-        public string ReturnResult(char[,] someBoard, string player)
+        public char ReturnResult(char[,] someBoard)
         {
-            string winnerResult = "";
+            char winnerResult = 'C';
 
-            //some code here
-            if (someBoard[0,0] == someBoard[0, 1] && someBoard[0,0] == someBoard[0,2])
+            // Assuming someBoard is a 2D char array and player is the current player (either 'X' or 'O')
+            //Horizontals
+            if (someBoard[0, 0] == someBoard[0, 1] && someBoard[0, 0] == someBoard[0, 2])
             {
-                winnerResult = player;
-            } else if (someBoard[0, 0] == someBoard[1, 0] && someBoard[0, 0] == someBoard[2, 0])
+                winnerResult = someBoard[0, 0];
+            }
+            else if (someBoard[1, 0] == someBoard[1, 1] && someBoard[1, 0] == someBoard[1, 2])
             {
-                winnerResult = player;
+                winnerResult = someBoard[1, 0];
+            }
+            else if (someBoard[2, 0] == someBoard[2, 1] && someBoard[2, 0] == someBoard[2, 2])
+            {
+                winnerResult = someBoard[2, 0];
+            }
+            //Verticals
+            else if (someBoard[0, 0] == someBoard[1, 0] && someBoard[0, 0] == someBoard[2, 0])
+            {
+                winnerResult = someBoard[0, 0];
+            }
+            else if (someBoard[0, 1] == someBoard[1, 1] && someBoard[0, 1] == someBoard[2, 1])
+            {
+                winnerResult = someBoard[0, 1];
+            }
+            else if (someBoard[0, 2] == someBoard[1, 2] && someBoard[0, 2] == someBoard[2, 2])
+            {
+                winnerResult = someBoard[0, 2];
+            }
+            // Check diagonals
+            else if (someBoard[0, 0] == someBoard[1, 1] && someBoard[0, 0] == someBoard[2, 2])
+            {
+                winnerResult = someBoard[0, 0];
+            }
+            else if (someBoard[0, 2] == someBoard[1, 1] && someBoard[0, 2] == someBoard[2, 0])
+            {
+                winnerResult = someBoard[0, 2];
+            }
+            else
+            {
+                winnerResult = 'C';
             }
 
 
