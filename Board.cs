@@ -13,6 +13,7 @@ namespace Mission4Assignment
         public Board() { }
 
 
+        //Builds and prints out the tic tac toe board
         public static void PrintBoard(char[,] board)
         {
             for (int i = 0; i < 3; i++)
@@ -29,6 +30,7 @@ namespace Mission4Assignment
         }
 
 
+        //Let's the user know if there was a winner or not
         public char ReturnResult(char[,] someBoard)
         {
             char winnerResult = 'C';
@@ -75,9 +77,8 @@ namespace Mission4Assignment
             }
 
 
-            // Can return either "player 1, player 2, or ''."
+            // Can return either "X, O, or C (for continue)"
             return winnerResult;
-           
         }
 
     }
