@@ -8,7 +8,7 @@
 
 
         //Builds and prints out the tic tac toe board
-        public static void PrintBoard(char[,] board)
+        public void PrintBoard(char[,] board)
         {
             for (int i = 0; i < 3; i++)
             {
