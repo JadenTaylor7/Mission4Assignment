@@ -29,12 +29,18 @@ namespace Mission4Assignment
         }
 
 
-        public string ReturnResult(char[,] someBoard, char playerTok)
+        public string ReturnResult(char[,] someBoard, string player)
         {
             string winnerResult = "";
 
             //some code here
-            
+            if (someBoard[0,0] == someBoard[0, 1] && someBoard[0,0] == someBoard[0,2])
+            {
+                winnerResult = player;
+            } else if (someBoard[0, 0] == someBoard[1, 0] && someBoard[0, 0] == someBoard[2, 0])
+            {
+                winnerResult = player;
+            }
 
 
             // Can return either "player 1, player 2, or ''."
