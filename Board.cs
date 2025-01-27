@@ -13,7 +13,7 @@ namespace Mission4Assignment
         public Board() { }
 
 
-        static void PrintBoard(char[,] board)
+        public void PrintBoard(char[,] board)
         {
             for (int i = 0; i < 3; i++)
             {
@@ -29,11 +29,12 @@ namespace Mission4Assignment
         }
 
 
-        public string ReturnResult(char[,] someBoard)
+        public string ReturnResult(char[,] someBoard, char playerTok)
         {
             string winnerResult = "";
 
             //some code here
+            
 
 
             // Can return either "player 1, player 2, or ''."
