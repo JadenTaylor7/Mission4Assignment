@@ -29,8 +29,10 @@ while (testWin == 'C' && turns <= 9)
     Console.WriteLine($"Player {currentPlayer}, choose a position: ");
     string input = Console.ReadLine();
     
+    // Test to see if it is a valid position
     if (int.TryParse(input, out int position) && position >= 1 && position <= 9 && !usedSpots.Contains(position))
     {
+        // Set the current player to the users choice
         if (position >= 1 && position <= 3)
             board[0, position - 1] = currentPlayer;
         else if (position >= 4 && position <= 6)
@@ -38,9 +40,13 @@ while (testWin == 'C' && turns <= 9)
         else if (position >= 7 && position <= 9)
             board[2, position - 6 - 1] = currentPlayer;
         
+        // Add this to the used Spots to keep track of the the position that have already been used
         usedSpots.Add(position);
+        
+        //Keep track of this turn
         turns++;
 
+        //Switch the Current Player
         if (currentPlayer == 'X')
         {
             currentPlayer = 'O';
@@ -50,7 +56,7 @@ while (testWin == 'C' && turns <= 9)
             currentPlayer = 'X';
         }
         
-        
+        //Test to see if there was a win
         testWin = bd.ReturnResult(board);
         
     } else
@@ -59,6 +65,7 @@ while (testWin == 'C' && turns <= 9)
     }
 }
 
+// Decide who to tell the user who won or if it was a draw
 if (testWin == 'X')
 {
     Console.WriteLine("Player X won!");
