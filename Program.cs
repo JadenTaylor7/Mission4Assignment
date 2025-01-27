@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using System.Runtime.InteropServices;
 using Mission4Assignment;
 
 Board bd = new Board();
@@ -13,28 +14,48 @@ char[,] board = {
 };
 
 // These are variables to keep track of the game
-bool gameWon = false;
+char testWin = 'C';
 int turns = 0;
 char currentPlayer = 'X';
 List<int> usedSpots = new List<int>();
 
 // Main game loop (I did not finish this all the way)
-while (!gameWon && turns < 9)
+while (testWin == 'C' && turns <= 9)
 {
-    Board.PrintBoard(board);
+    Console.Clear();
+    Console.WriteLine("");
+    bd.PrintBoard(board);
     // Ask the current player for their choice
     Console.WriteLine($"Player {currentPlayer}, choose a position: ");
     string input = Console.ReadLine();
     
     if (int.TryParse(input, out int position) && position >= 1 && position <= 9 && !usedSpots.Contains(position))
     {
-        // if position
+        if (position >= 1 && position <= 3)
+            board[0, position - 1] = currentPlayer;
+        else if (position >= 4 && position <= 6)
+            board[1, position - 3 - 1] = currentPlayer;
+        else if (position >= 7 && position <= 9)
+            board[2, position - 6 - 1] = currentPlayer;
         
         usedSpots.Add(position);
+        turns++;
+
+        if (currentPlayer == 'X')
+        {
+            currentPlayer = 'O';
+        }
+        else
+        {
+            currentPlayer = 'X';
+        }
+        
+        
+        bd.PrintBoard(board);
         
     } else
     {
         Console.WriteLine("Invalid position! Try again.");
     }
-
 }
+
